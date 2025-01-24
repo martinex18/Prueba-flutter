@@ -59,8 +59,8 @@ class _HomeState extends State<Home> {
         // Se filtran los lugares
         final lugaresFiltrados = lugares.where((lugar) {
           final types = lugar['types'] as List<dynamic>?; // Lista de categorías
-          return types?.any((type) => type == buscar) ??
-              false; // Coincide con el filtro
+          return types?.any((type) => type == buscar) ?? // se valida que los lugares tengan la categoria buscada 
+              false; 
         }).toList();
 
         if (buscar.isNotEmpty && lugaresFiltrados.isEmpty) {
@@ -79,9 +79,9 @@ class _HomeState extends State<Home> {
             icon: BitmapDescriptor.defaultMarker,
             infoWindow: InfoWindow(
               title: lugar['name'],
-              snippet: lugar['types']?.firstWhere(
+              snippet: lugar['types']?.firstWhere( // Se busca la primera categoria diferente de point_of_interest
                       (type) => type != "point_of_interest",
-                      orElse: () => "Sin categoría") ??
+                      orElse: () => "Sin categoría") ?? // si no se encuentra ninguna categoria o si es null se devuelve el string
                   "Sin categoría",
             ),
           ));
@@ -141,7 +141,7 @@ class _HomeState extends State<Home> {
           GoogleMap(
             initialCameraPosition:
                 const CameraPosition(target: ubixDefecto, zoom: 15),
-            markers: Set<Marker>.of(markers),
+            markers: Set<Marker>.of(markers), // se convierte una lista en un conjunto unico
             onMapCreated: (controller) => _controller.complete(controller),
           ),
           if (isLoading)

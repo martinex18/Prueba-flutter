@@ -1,16 +1,34 @@
-# myapp
+# APP FLUTTER.
 
-A new Flutter project.
+## Descripción.
+La aplicación muestra un mapa utilizando Google Maps. Se puede ver la ubicación, los POIs cercanos y filtrar por medio de la categoría.
 
-## Getting Started
+## Tecnologías usadas.
+1. Dart - Como lenguaje de programación.
+2. Flutter - Como framework.
 
-This project is a starting point for a Flutter application.
+## Paquetes.
+1. google_maps_flutter:
+   Versión: ^2.10.0
 
-A few resources to get you started if this is your first Flutter project:
+2. geolocator:
+   Versión: ^10.0.0
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+3. http:
+   Versión: ^1.3.0
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Estructura.
+1. main.dart: Archivo principal de la
+   app.
+
+2. home.dart: Tiene la lógica para
+   mostrar el mapa y la
+   búsqueda de los POIs.
+
+3. location.dart:
+   Comsigue la ubicación actual con los
+   permisos utilizando geolocator.
+
+4. places.dart: Llama a la API de
+   Google Places para obtener lugares
+   cercanos segun las características.

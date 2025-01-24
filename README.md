@@ -29,6 +29,6 @@ La aplicación muestra un mapa utilizando Google Maps. Se puede ver la ubicació
    Comsigue la ubicación actual con los
    permisos utilizando geolocator.
 
-4. places.dart: Llama a la API de
+4. poi.dart: Llama a la API de
    Google Places para obtener lugares
    cercanos segun las características.
